@@ -1,0 +1,51 @@
+<div class="cart">
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY048t_rCchDgPXwHaQ11x3YakucJ2yh0qZA&usqp=CAU"
+                    alt="">
+                <h6>All Products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')">
+                <img src="https://media.istockphoto.com/id/1335669510/vector/vector-isometric-devices-set.jpg?s=612x612&w=0&k=20&c=DBjsHSWGxGDkKrWTFus2CvvCDUHhksziuj8cN4FZKwo="
+                    alt="">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fashion')">
+                <img style="width: 85px;"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1xxbFK3Z-V6MJ-H9YoJjIRBHGj71579LsGw&usqp=CAU"
+                    alt="">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')">
+                <img style="width: 85px;"
+                    src="https://media.istockphoto.com/id/1152003770/vector/icon-diamond-vector-logo.jpg?s=612x612&w=0&k=20&c=b6mZJ7u3anlhDiHB4vXkNODvTv5s2mDqNLt7UsrsDzg="
+                    alt="">
+                <h6>Jewllary</h6>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchkey: 'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 class="ellp">{{item.title}}</h5>
+                <p class="ellp">{{item.description}}</p>
+                <p><strong>Price</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" (click)="addtocart(item)">Add Cart</button>
+             </div> 
+        </ng-container>
+    </div>
+</div>
